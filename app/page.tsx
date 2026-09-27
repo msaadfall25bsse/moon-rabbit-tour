@@ -182,6 +182,37 @@ export default function Home() {
         {/* Bottom subtle gradient fade to blend smoothly */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none z-10" />
       </section>
+
+      {/* ================= WHAT WE DO SECTION ================= */}
+      <section
+        className="relative w-full py-[70px] px-4 sm:px-6 md:px-8 bg-cover bg-bottom bg-no-repeat flex flex-col items-center justify-center text-white"
+        style={{
+          backgroundImage: "url('/what-we-do-bg.jpg')",
+        }}
+      >
+        {/* Dark overlay matching original: background-color: #0000008C */}
+        <div className="absolute inset-0 bg-black/55 pointer-events-none" />
+
+        <div className="relative z-10 w-full max-w-[850px] mx-auto flex flex-col items-center text-center">
+          {/* Section Heading: 45px Oswald font-extralight (#FFFFFF) */}
+          <h2 className="font-['Oswald',sans-serif] text-[40px] sm:text-[45px] font-[200] leading-[1.3] text-[#FFFFFF] mb-6 sm:mb-8 tracking-wide">
+            What We Do
+          </h2>
+
+          {/* Text Content: 18px Oswald font-[300] text-[#FFFDFD] text-justify */}
+          <div className="font-['Oswald',sans-serif] text-[18px] font-[300] leading-[1.8] text-[#FFFDFD] text-justify space-y-4 sm:space-y-5 px-2 sm:px-4">
+            <p className="py-[9px]">
+              Moon Rabbit offers a unique Mystical Guided Tour through the bewildering scenery of Northern Pakistan. Our tour packages are all inclusive and only require a simple booking followed by your arrival to a local airport of your choice.
+            </p>
+            <p className="py-[9px]">
+              Rest assured, from arrival till your departure Moon Rabbit will lavish you with hospitality while providing the following amenities: dependable 4×4 vehicles, boats, mountain bikes, and a variety of picturesque accommodations along with authentic cuisine from all of the best restaurants in the area.
+            </p>
+            <p className="py-[9px]">
+              The Moon Rabbit Tour Guide is well-versed and during the journey he will provide all guests an interesting backstory regarding the people, culture, and history of the area focusing on esoteric knowledge transfer. We look forward to sharing a truly memorable life changing experience with you!
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
