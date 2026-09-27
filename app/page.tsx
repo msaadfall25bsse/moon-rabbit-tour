@@ -185,7 +185,7 @@ export default function Home() {
 
       {/* ================= WHAT WE DO SECTION ================= */}
       <section
-        className="relative w-full py-[70px] px-4 sm:px-6 md:px-8 bg-cover bg-bottom bg-no-repeat flex flex-col items-center justify-center text-white"
+        className="relative w-full min-h-[450px] py-[70px] px-6 sm:px-12 md:px-16 lg:px-24 bg-cover bg-bottom bg-no-repeat flex items-center justify-center text-white"
         style={{
           backgroundImage: "url('/what-we-do-bg.jpg')",
         }}
@@ -193,21 +193,23 @@ export default function Home() {
         {/* Dark overlay matching original: background-color: #0000008C */}
         <div className="absolute inset-0 bg-black/55 pointer-events-none" />
 
-        <div className="relative z-10 w-full max-w-[850px] mx-auto flex flex-col items-center text-center">
-          {/* Section Heading: 45px Oswald font-extralight (#FFFFFF) */}
-          <h2 className="font-['Oswald',sans-serif] text-[40px] sm:text-[45px] font-[200] leading-[1.3] text-[#FFFFFF] mb-6 sm:mb-8 tracking-wide">
-            What We Do
-          </h2>
+        <div className="relative z-10 w-full max-w-[1240px] mx-auto flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
+          {/* Left Column (Heading): ~38% width */}
+          <div className="w-full md:w-[38%] flex items-center justify-center md:justify-center">
+            <h2 className="font-['Oswald',sans-serif] text-[40px] sm:text-[45px] font-[200] leading-[1.2] text-[#FFFFFF] tracking-wide text-center md:text-left">
+              What We Do
+            </h2>
+          </div>
 
-          {/* Text Content: 18px Oswald font-[300] text-[#FFFDFD] text-justify */}
-          <div className="font-['Oswald',sans-serif] text-[18px] font-[300] leading-[1.8] text-[#FFFDFD] text-justify space-y-4 sm:space-y-5 px-2 sm:px-4">
-            <p className="py-[9px]">
+          {/* Right Column (Text Content): ~61% width */}
+          <div className="w-full md:w-[61%] font-['Oswald',sans-serif] text-[17px] sm:text-[18px] font-[300] leading-[1.65] text-[#FFFDFD] text-left md:text-justify space-y-4">
+            <p className="py-[4px]">
               Moon Rabbit offers a unique Mystical Guided Tour through the bewildering scenery of Northern Pakistan. Our tour packages are all inclusive and only require a simple booking followed by your arrival to a local airport of your choice.
             </p>
-            <p className="py-[9px]">
+            <p className="py-[4px]">
               Rest assured, from arrival till your departure Moon Rabbit will lavish you with hospitality while providing the following amenities: dependable 4×4 vehicles, boats, mountain bikes, and a variety of picturesque accommodations along with authentic cuisine from all of the best restaurants in the area.
             </p>
-            <p className="py-[9px]">
+            <p className="py-[4px]">
               The Moon Rabbit Tour Guide is well-versed and during the journey he will provide all guests an interesting backstory regarding the people, culture, and history of the area focusing on esoteric knowledge transfer. We look forward to sharing a truly memorable life changing experience with you!
             </p>
           </div>
