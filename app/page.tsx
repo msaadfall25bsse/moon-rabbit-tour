@@ -31,7 +31,7 @@ export default function Home() {
         </div>
 
         {/* LOGO CONTAINER */}
-        <div className="flex flex-col items-center justify-center pb-0 z-20">
+        <div className="flex flex-col items-center justify-center pb-0 mb-[-10px] z-20">
           <Link href="/" className="inline-block transition-transform hover:scale-[1.02] duration-300">
             <Image
               src="/logo.png"
@@ -45,7 +45,7 @@ export default function Home() {
         </div>
 
         {/* DESKTOP NAVIGATION MENU */}
-        <nav className="hidden sm:flex items-center justify-center mt-2 sm:mt-2.5 z-30">
+        <nav className="hidden sm:flex items-center justify-center mt-0.5 sm:mt-0.5 z-30">
           <ul className="flex items-center space-x-[27px] md:space-x-[35px] text-[13px] tracking-[0.2px] font-medium">
             <li>
               <Link
