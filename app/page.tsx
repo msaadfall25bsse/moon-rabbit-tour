@@ -46,7 +46,7 @@ export default function Home() {
 
         {/* DESKTOP NAVIGATION MENU */}
         <nav className="hidden sm:flex items-center justify-center mt-0.5 sm:mt-0.5 z-30">
-          <ul className="flex items-center space-x-[27px] md:space-x-[35px] text-[13px] tracking-[0.2px] font-medium">
+          <ul className="flex items-center space-x-[22px] md:space-x-[30px] text-[13px] tracking-[0.2px] font-medium">
             <li>
               <Link
                 href="/"
