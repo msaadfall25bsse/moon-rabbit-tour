@@ -44,9 +44,9 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* DESKTOP NAVIGATION MENU (Identical structure and spacing to original: margin-top: -35px) */}
-        <nav className="hidden sm:flex items-center justify-center mt-[-35px] z-30">
-          <ul className="flex items-center space-x-8 md:space-x-10 text-[13px] tracking-[0.2px] font-medium">
+        {/* DESKTOP NAVIGATION MENU */}
+        <nav className="hidden sm:flex items-center justify-center mt-[-25px] z-30">
+          <ul className="flex items-center space-x-[27px] md:space-x-[35px] text-[13px] tracking-[0.2px] font-medium">
             <li>
               <Link
                 href="/"
