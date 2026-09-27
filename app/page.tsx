@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="relative min-h-screen w-full bg-black overflow-x-hidden text-white font-['Poppins',sans-serif]">
       {/* ================= HEADER / NAVIGATION OVERLAY ================= */}
-      <header className="absolute top-0 left-0 w-full z-50 flex flex-col items-center pt-5 sm:pt-7">
+      <header className="absolute top-0 left-0 w-full z-50 flex flex-col items-center pt-[30px] sm:pt-[38px]">
         {/* Right Corner Mobile Menu Toggle (matching real site) */}
         <div className="absolute right-6 top-6 sm:hidden z-50">
           <button
