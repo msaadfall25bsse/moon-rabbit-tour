@@ -303,6 +303,35 @@ export default function Home() {
           </button>
         </div>
       </section>
+
+      {/* ================= OUR THEME SECTION ================= */}
+      <section className="relative w-full bg-black py-16 sm:py-20 text-white overflow-hidden">
+        {/* Section Heading matching Moon Rabbit: font-Oswald 45px font-300 */}
+        <div className="w-full text-center px-4 mb-8 sm:mb-12">
+          <h2 className="font-['Oswald',sans-serif] text-[34px] sm:text-[45px] font-[300] leading-[1.4] text-[#E9E9E9]">
+            Our Theme
+          </h2>
+        </div>
+
+        {/* Video Container matching Elementor Boxed Container */}
+        <div className="relative w-full max-w-[1140px] mx-auto px-4 sm:px-6 md:px-8">
+          <div className="relative w-full rounded-md overflow-hidden bg-black shadow-2xl border border-white/10 aspect-video">
+            <video
+              className="w-full h-full object-cover"
+              src="https://moonrabbit.pk/wp-content/uploads/2023/07/Moon-Rabbit-Final-5.mp4"
+              poster="/our-theme-poster.png"
+              controls
+              loop
+              playsInline
+              preload="metadata"
+              controlsList="nodownload"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
+
