@@ -267,9 +267,9 @@ export default function Home() {
 
                 {/* Dark Hover Reveal Overlay matching real website exactly */}
                 <div className="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center z-20">
-                  <h3 className="font-['Georgia',serif] text-[#d6c2a1] text-[18px] sm:text-[20px] font-normal italic mb-3 leading-snug">
+                  <h2 className="font-['Oswald',sans-serif] text-[#D6C2A1] text-[20px] font-normal tracking-normal mb-[12px] leading-snug">
                     &ldquo;{item.name.replace(/^“|”$/g, '')}&rdquo;
-                  </h3>
+                  </h2>
 
                   {item.heightMeters ? (
                     <div className="font-['Oswald',sans-serif] text-[15px] sm:text-[16px] font-[200] text-[#e6dcc8] space-y-1 tracking-wide">
