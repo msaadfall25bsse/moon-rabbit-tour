@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { MOUNTAINS_DATA } from "./mountains-data";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="relative min-h-screen w-full bg-black overflow-x-hidden text-white font-['Poppins',sans-serif]">
@@ -213,6 +215,92 @@ export default function Home() {
               The Moon Rabbit Tour Guide is well-versed and during the journey he will provide all guests an interesting backstory regarding the people, culture, and history of the area focusing on esoteric knowledge transfer. We look forward to sharing a truly memorable life changing experience with you!
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* ================= THE MAJESTIC MOUNTAINS OF PAKISTAN SECTION ================= */}
+      <section className="relative w-full bg-black py-14 sm:py-16 text-white overflow-hidden">
+        {/* Section Heading matching Moon Rabbit: font-Oswald 45px font-300 */}
+        <div className="w-full text-center px-4 mb-10 sm:mb-12">
+          <h2 className="font-['Oswald',sans-serif] text-[34px] sm:text-[45px] font-[300] leading-[1.4] text-[#E9E9E9]">
+            The Majestic Mountains of Pakistan
+          </h2>
+        </div>
+
+        {/* Carousel Container with Arrows */}
+        <div className="relative w-full max-w-[1400px] mx-auto px-4 sm:px-8">
+          {/* Left Arrow Button */}
+          <button
+            onClick={() => {
+              if (carouselRef.current) {
+                carouselRef.current.scrollBy({ left: -360, behavior: "smooth" });
+              }
+            }}
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/70 hover:bg-[#ff4a52] text-white flex items-center justify-center transition-all border border-white/20 shadow-lg"
+            aria-label="Previous Mountain"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Mountain Cards Horizontal Scroll Slider */}
+          <div
+            ref={carouselRef}
+            className="flex items-stretch gap-4 overflow-x-auto scrollbar-none scroll-smooth pb-6 px-4"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {MOUNTAINS_DATA.map((item) => (
+              <Link
+                key={item.id}
+                href={`/mountains/${item.slug}`}
+                className="group relative flex-shrink-0 w-[280px] sm:w-[300px] md:w-[310px] h-[360px] sm:h-[390px] rounded-lg overflow-hidden border border-white/10 bg-black cursor-pointer transition-transform duration-300 hover:scale-[1.02] shadow-2xl block"
+              >
+                {/* Background Image of Mountain */}
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  sizes="(max-width: 768px) 300px, 350px"
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                />
+
+                {/* Dark Hover Reveal Overlay matching real website exactly */}
+                <div className="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center z-20">
+                  <h3 className="font-['Georgia',serif] text-[#d6c2a1] text-[18px] sm:text-[20px] font-normal italic mb-3 leading-snug">
+                    &ldquo;{item.name.replace(/^“|”$/g, '')}&rdquo;
+                  </h3>
+
+                  {item.heightMeters ? (
+                    <div className="font-['Oswald',sans-serif] text-[15px] sm:text-[16px] font-[200] text-[#e6dcc8] space-y-1 tracking-wide">
+                      <p>{item.heightMeters}</p>
+                      <p>{item.heightFeet}</p>
+                      <p className="text-zinc-400 mt-1">{item.range}</p>
+                    </div>
+                  ) : (
+                    <p className="font-['Oswald',sans-serif] text-[14px] font-[200] text-zinc-300 leading-relaxed text-justify line-clamp-6">
+                      {item.description}
+                    </p>
+                  )}
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* Right Arrow Button */}
+          <button
+            onClick={() => {
+              if (carouselRef.current) {
+                carouselRef.current.scrollBy({ left: 360, behavior: "smooth" });
+              }
+            }}
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/70 hover:bg-[#ff4a52] text-white flex items-center justify-center transition-all border border-white/20 shadow-lg"
+            aria-label="Next Mountain"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
       </section>
     </div>
