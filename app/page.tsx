@@ -1,69 +1,187 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="relative min-h-screen w-full bg-black overflow-x-hidden text-white font-['Poppins',sans-serif]">
+      {/* ================= HEADER / NAVIGATION OVERLAY ================= */}
+      <header className="absolute top-0 left-0 w-full z-50 flex flex-col items-center pt-5 sm:pt-7">
+        {/* Right Corner Mobile Menu Toggle (matching real site) */}
+        <div className="absolute right-6 top-6 sm:hidden z-50">
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="text-white hover:text-[#ff4a52] transition-colors p-2 focus:outline-none"
+            aria-label="Toggle navigation"
           >
+            {mobileMenuOpen ? (
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </div>
+
+        {/* LOGO CONTAINER */}
+        <div className="flex flex-col items-center justify-center pb-0 z-20">
+          <Link href="/" className="inline-block transition-transform hover:scale-[1.02] duration-300">
             <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+              src="/logo.png"
+              alt="Moon Rabbit"
+              width={200}
+              height={202}
+              priority
+              className="w-[170px] sm:w-[200px] h-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </Link>
         </div>
-      </main>
+
+        {/* DESKTOP NAVIGATION MENU (Identical structure and spacing to original: margin-top: -35px) */}
+        <nav className="hidden sm:flex items-center justify-center mt-[-35px] z-30">
+          <ul className="flex items-center space-x-8 md:space-x-10 text-[13px] tracking-[0.2px] font-medium">
+            <li>
+              <Link
+                href="/"
+                className="text-white hover:text-[#ff4a52] transition-colors duration-200 py-2 inline-block border-b-2 border-transparent hover:border-[#ff4a52]"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="https://moonrabbit.pk/tour/"
+                className="text-white hover:text-[#ff4a52] transition-colors duration-200 py-2 inline-block"
+              >
+                Tours
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="https://moonrabbit.pk/vehicles/"
+                className="text-white hover:text-[#ff4a52] transition-colors duration-200 py-2 inline-block"
+              >
+                Vehicles
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="https://moonrabbit.pk/accommodation/"
+                className="text-white hover:text-[#ff4a52] transition-colors duration-200 py-2 inline-block"
+              >
+                Accommodations
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="https://moonrabbit.pk/contact/"
+                className="text-white hover:text-[#ff4a52] transition-colors duration-200 py-2 inline-block"
+              >
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="https://moonrabbit.pk/mining/"
+                className="text-[#FFD700] hover:text-[#ddb36a] transition-colors duration-200 py-2 inline-block font-semibold"
+              >
+                Mining
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* MOBILE SLIDE-DOWN MENU */}
+        {mobileMenuOpen && (
+          <div className="sm:hidden w-full bg-black/95 backdrop-blur-md border-b border-white/10 px-6 py-6 mt-4 transition-all">
+            <ul className="flex flex-col space-y-4 text-center text-sm font-medium">
+              <li>
+                <Link
+                  href="/"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-white hover:text-[#ff4a52] transition-colors py-1"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://moonrabbit.pk/tour/"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-white hover:text-[#ff4a52] transition-colors py-1"
+                >
+                  Tours
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://moonrabbit.pk/vehicles/"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-white hover:text-[#ff4a52] transition-colors py-1"
+                >
+                  Vehicles
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://moonrabbit.pk/accommodation/"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-white hover:text-[#ff4a52] transition-colors py-1"
+                >
+                  Accommodations
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://moonrabbit.pk/contact/"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-white hover:text-[#ff4a52] transition-colors py-1"
+                >
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://moonrabbit.pk/mining/"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-[#FFD700] hover:text-[#ddb36a] transition-colors py-1 font-semibold"
+                >
+                  Mining
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
+      </header>
+
+      {/* ================= HERO VIDEO SECTION ================= */}
+      <section className="relative w-full h-screen min-h-[600px] overflow-hidden bg-black flex items-center justify-center">
+        {/* Fullscreen Background Video with AutoPlay, Loop, Muted, Playsinline */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/moon-poster.jpg"
+          className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+        >
+          <source src="/moon-720p.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Ambient Subtle Vignette / Overlay matching Revolution Slider / Elementor theme */}
+        <div className="absolute inset-0 bg-black/15 pointer-events-none z-10" />
+
+        {/* Bottom subtle gradient fade to blend smoothly */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none z-10" />
+      </section>
     </div>
   );
 }
