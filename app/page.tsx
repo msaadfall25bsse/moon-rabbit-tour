@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect, useCallback } from "react";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 import { MOUNTAINS_DATA } from "./mountains-data";
 
 export default function Home() {
@@ -87,156 +89,7 @@ export default function Home() {
   return (
     <div className="relative min-h-screen w-full bg-black overflow-x-hidden text-white font-['Poppins',sans-serif]">
       {/* ================= HEADER / NAVIGATION OVERLAY ================= */}
-      <header className="absolute top-0 left-0 w-full z-50 flex flex-col items-center pt-[30px] sm:pt-[38px]">
-        {/* Right Corner Mobile Menu Toggle (matching real site) */}
-        <div className="absolute right-6 top-6 sm:hidden z-50">
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-white hover:text-[#ff4a52] transition-colors p-2 focus:outline-none"
-            aria-label="Toggle navigation"
-          >
-            {mobileMenuOpen ? (
-              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
-        </div>
-
-        {/* LOGO CONTAINER */}
-        <div className="flex flex-col items-center justify-center pb-0 mb-[-10px] z-20">
-          <Link href="/" className="inline-block transition-transform hover:scale-[1.02] duration-300">
-            <Image
-              src="/logo.png"
-              alt="Moon Rabbit"
-              width={200}
-              height={202}
-              priority
-              className="w-[170px] sm:w-[200px] h-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
-            />
-          </Link>
-        </div>
-
-        {/* DESKTOP NAVIGATION MENU */}
-        <nav className="hidden sm:flex items-center justify-center mt-0.5 sm:mt-0.5 z-30">
-          <ul className="flex items-center space-x-[22px] md:space-x-[30px] text-[13px] tracking-[0.2px] font-medium">
-            <li>
-              <Link
-                href="/"
-                className="text-white hover:text-[#ff4a52] transition-colors duration-200 py-2 inline-block border-b-2 border-transparent hover:border-[#ff4a52]"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://moonrabbit.pk/tour/"
-                className="text-white hover:text-[#ff4a52] transition-colors duration-200 py-2 inline-block"
-              >
-                Tours
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://moonrabbit.pk/vehicles/"
-                className="text-white hover:text-[#ff4a52] transition-colors duration-200 py-2 inline-block"
-              >
-                Vehicles
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://moonrabbit.pk/accommodation/"
-                className="text-white hover:text-[#ff4a52] transition-colors duration-200 py-2 inline-block"
-              >
-                Accommodations
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://moonrabbit.pk/contact/"
-                className="text-white hover:text-[#ff4a52] transition-colors duration-200 py-2 inline-block"
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://moonrabbit.pk/mining/"
-                className="text-[#FFD700] hover:text-[#ddb36a] transition-colors duration-200 py-2 inline-block font-semibold"
-              >
-                Mining
-              </Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* MOBILE SLIDE-DOWN MENU */}
-        {mobileMenuOpen && (
-          <div className="sm:hidden w-full bg-black/95 backdrop-blur-md border-b border-white/10 px-6 py-6 mt-4 transition-all">
-            <ul className="flex flex-col space-y-4 text-center text-sm font-medium">
-              <li>
-                <Link
-                  href="/"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-white hover:text-[#ff4a52] transition-colors py-1"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://moonrabbit.pk/tour/"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-white hover:text-[#ff4a52] transition-colors py-1"
-                >
-                  Tours
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://moonrabbit.pk/vehicles/"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-white hover:text-[#ff4a52] transition-colors py-1"
-                >
-                  Vehicles
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://moonrabbit.pk/accommodation/"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-white hover:text-[#ff4a52] transition-colors py-1"
-                >
-                  Accommodations
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://moonrabbit.pk/contact/"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-white hover:text-[#ff4a52] transition-colors py-1"
-                >
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://moonrabbit.pk/mining/"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-[#FFD700] hover:text-[#ddb36a] transition-colors py-1 font-semibold"
-                >
-                  Mining
-                </Link>
-              </li>
-            </ul>
-          </div>
-        )}
-      </header>
+      <Header />
 
       {/* ================= HERO VIDEO SECTION ================= */}
       <section className="relative w-full h-screen min-h-[600px] overflow-hidden bg-black flex items-center justify-center">
@@ -402,72 +255,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= FOOTER — matches moonrabbit.pk exactly ================= */}
-      <footer className="relative w-full overflow-hidden" style={{ minHeight: "240px" }}>
-
-        {/* === Background: user provided map image === */}
-        <div
-          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/WhatsApp%20Image%202026-09-28%20at%205.17.38%20AM.jpeg')" }}
-        />
-        {/* Darkening overlay so text stays readable */}
-        <div className="absolute inset-0 bg-black/60" />
-
-        {/* === Main Footer Content Row === */}
-        <div className="relative z-10 w-full max-w-[1240px] mx-auto px-8 sm:px-12 py-10 flex justify-between items-end">
-
-          {/* Logo Lockup (Left Aligned) */}
-          <div className="flex flex-col items-center justify-center text-center pt-2 pb-4">
-
-            {/* Logo Image */}
-            <Link href="/" className="transition-opacity hover:opacity-80 duration-300 mb-2">
-              <Image
-                src="/logo.png"
-                alt="Moon Rabbit Tours"
-                width={150}
-                height={150}
-                className="w-[120px] sm:w-[150px] h-auto object-contain drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]"
-              />
-            </Link>
-
-            {/* Moon Rabbit Text */}
-            <h2 className="text-white text-[24px] sm:text-[28px] tracking-wide font-serif mb-1" style={{ textShadow: "0px 2px 4px rgba(0,0,0,0.8)" }}>
-              Moon Rabbit
-            </h2>
-
-            {/* Divider with Star/Diamond */}
-            <div className="flex items-center justify-center gap-2 my-1 opacity-80 w-full max-w-[180px]">
-              <div className="h-[1px] bg-white/70 flex-grow" />
-              <span className="text-white text-[9px] leading-none mb-[2px]">✦</span>
-              <div className="h-[1px] bg-white/70 flex-grow" />
-            </div>
-
-            {/* TOURS text */}
-            <p className="font-['Oswald',sans-serif] text-white/95 text-[10px] sm:text-[11px] tracking-[6px] sm:tracking-[8px] uppercase font-[400] mt-1 mb-5 ml-[4px]">
-              TOURS
-            </p>
-
-            {/* Cursive Tagline */}
-            <p
-              className="text-white text-[16px] sm:text-[18px] leading-snug drop-shadow-md"
-              style={{ fontFamily: "var(--font-dancing), 'Georgia', cursive", fontWeight: 400 }}
-            >
-              ..a <span className="text-[#e2c565]">spiritual</span> journey through the material <span className="text-[20px] sm:text-[22px]">World</span>
-            </p>
-          </div>
-
-          {/* Right Side Mushroom Image */}
-          <div className="hidden sm:block pb-6 pr-4 sm:pr-8">
-            <Image
-              src="/amanita.png"
-              alt="Mushroom"
-              width={140}
-              height={150}
-              className="w-[100px] sm:w-[140px] lg:w-[160px] h-auto object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)] hover:scale-105 transition-transform duration-300"
-            />
-          </div>
-        </div>
-      </footer>
+      {/* ================= FOOTER ================= */}
+      <Footer />
     </div>
   );
 }
