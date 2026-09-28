@@ -2,12 +2,87 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { MOUNTAINS_DATA } from "./mountains-data";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const autoSlideRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const isPausedRef = useRef(false);
+
+  // Duplicate cards for seamless infinite loop
+  // We show 4 cards at a time; after every 4, we loop back
+  const CARD_WIDTH = 314; // card width + gap (310px + 4px gap)
+  const VISIBLE = 4;
+  const totalCards = MOUNTAINS_DATA.length;
+
+  // Infinite clone: original + clone of first VISIBLE items appended
+  const infiniteData = [...MOUNTAINS_DATA, ...MOUNTAINS_DATA.slice(0, VISIBLE)];
+
+  const scrollToIndex = useCallback((index: number, smooth = true) => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollTo({
+        left: index * CARD_WIDTH,
+        behavior: smooth ? "smooth" : "instant",
+      });
+    }
+  }, [CARD_WIDTH]);
+
+  const slideNext = useCallback(() => {
+    setCurrentIndex((prev) => {
+      const next = prev + 1;
+      if (next >= totalCards) {
+        // Jump back to start after cloned section finishes animating
+        setTimeout(() => {
+          setCurrentIndex(0);
+          scrollToIndex(0, false);
+        }, 500);
+        scrollToIndex(next, true);
+        return next;
+      }
+      scrollToIndex(next, true);
+      return next;
+    });
+  }, [totalCards, scrollToIndex]);
+
+  const slidePrev = useCallback(() => {
+    setCurrentIndex((prev) => {
+      if (prev <= 0) {
+        // Jump to end clone
+        const jumpTo = totalCards - 1;
+        scrollToIndex(jumpTo, false);
+        setTimeout(() => {
+          scrollToIndex(jumpTo - 1, true);
+          setCurrentIndex(jumpTo - 1);
+        }, 20);
+        return prev;
+      }
+      const next = prev - 1;
+      scrollToIndex(next, true);
+      return next;
+    });
+  }, [totalCards, scrollToIndex]);
+
+  const startAutoSlide = useCallback(() => {
+    if (autoSlideRef.current) clearInterval(autoSlideRef.current);
+    autoSlideRef.current = setInterval(() => {
+      if (!isPausedRef.current) {
+        slideNext();
+      }
+    }, 3000);
+  }, [slideNext]);
+
+  useEffect(() => {
+    startAutoSlide();
+    return () => {
+      if (autoSlideRef.current) clearInterval(autoSlideRef.current);
+    };
+  }, [startAutoSlide]);
+
+  const handleMouseEnter = () => { isPausedRef.current = true; };
+  const handleMouseLeave = () => { isPausedRef.current = false; };
 
   return (
     <div className="relative min-h-screen w-full bg-black overflow-x-hidden text-white font-['Poppins',sans-serif]">
@@ -217,7 +292,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ================= THE MAJESTIC MOUNTAINS OF PAKISTAN SECTION ================= */}
       <section className="relative w-full bg-black py-14 sm:py-16 text-white overflow-hidden">
         {/* Section Heading matching Moon Rabbit: font-Oswald 45px font-300 */}
@@ -228,14 +302,14 @@ export default function Home() {
         </div>
 
         {/* Carousel Container with Arrows */}
-        <div className="relative w-full max-w-[1400px] mx-auto px-4 sm:px-8">
+        <div
+          className="relative w-full max-w-[1400px] mx-auto px-4 sm:px-8"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           {/* Left Arrow Button */}
           <button
-            onClick={() => {
-              if (carouselRef.current) {
-                carouselRef.current.scrollBy({ left: -360, behavior: "smooth" });
-              }
-            }}
+            onClick={() => { slidePrev(); startAutoSlide(); }}
             className="absolute left-2 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/70 hover:bg-[#ff4a52] text-white flex items-center justify-center transition-all border border-white/20 shadow-lg"
             aria-label="Previous Mountain"
           >
@@ -244,15 +318,15 @@ export default function Home() {
             </svg>
           </button>
 
-          {/* Mountain Cards Horizontal Scroll Slider */}
+          {/* Mountain Cards Horizontal Scroll Slider — infinite auto-play */}
           <div
             ref={carouselRef}
-            className="flex items-stretch gap-4 overflow-x-auto scrollbar-none scroll-smooth pb-6 px-4"
+            className="flex items-stretch gap-4 overflow-x-hidden pb-6 px-4"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
-            {MOUNTAINS_DATA.map((item) => (
+            {infiniteData.map((item, idx) => (
               <Link
-                key={item.id}
+                key={`${item.id}-${idx}`}
                 href={`/mountains/${item.slug}`}
                 className="group relative flex-shrink-0 w-[280px] sm:w-[300px] md:w-[310px] h-[360px] sm:h-[390px] rounded-lg overflow-hidden border border-white/10 bg-black cursor-pointer transition-transform duration-300 hover:scale-[1.02] shadow-2xl block"
               >
@@ -268,7 +342,7 @@ export default function Home() {
                 {/* Dark Hover Reveal Overlay matching real website exactly */}
                 <div className="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center z-20">
                   <h2 className="font-['Oswald',sans-serif] text-[#D6C2A1] text-[20px] font-normal tracking-normal mb-[12px] leading-snug">
-                    &ldquo;{item.name.replace(/^“|”$/g, '')}&rdquo;
+                    &ldquo;{item.name.replace(/^"|"$/g, '')}&rdquo;
                   </h2>
 
                   {item.heightMeters ? (
@@ -289,11 +363,7 @@ export default function Home() {
 
           {/* Right Arrow Button */}
           <button
-            onClick={() => {
-              if (carouselRef.current) {
-                carouselRef.current.scrollBy({ left: 360, behavior: "smooth" });
-              }
-            }}
+            onClick={() => { slideNext(); startAutoSlide(); }}
             className="absolute right-2 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/70 hover:bg-[#ff4a52] text-white flex items-center justify-center transition-all border border-white/20 shadow-lg"
             aria-label="Next Mountain"
           >
@@ -314,7 +384,7 @@ export default function Home() {
         </div>
 
         {/* Video Container matching Elementor Boxed Container */}
-        <div className="relative w-full max-w-[1140px] mx-auto px-4 sm:px-6 md:px-8">
+        <div className="relative w-full max-w-[850px] mx-auto px-4 sm:px-6 md:px-8">
           <div className="relative w-full rounded-md overflow-hidden bg-black shadow-2xl border border-white/10 aspect-video">
             <video
               className="w-full h-full object-cover"
@@ -331,6 +401,73 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ================= FOOTER — matches moonrabbit.pk exactly ================= */}
+      <footer className="relative w-full overflow-hidden" style={{ minHeight: "240px" }}>
+
+        {/* === Background: user provided map image === */}
+        <div
+          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/WhatsApp%20Image%202026-09-28%20at%205.17.38%20AM.jpeg')" }}
+        />
+        {/* Darkening overlay so text stays readable */}
+        <div className="absolute inset-0 bg-black/60" />
+
+        {/* === Main Footer Content Row === */}
+        <div className="relative z-10 w-full max-w-[1240px] mx-auto px-8 sm:px-12 py-10 flex justify-between items-end">
+
+          {/* Logo Lockup (Left Aligned) */}
+          <div className="flex flex-col items-center justify-center text-center pt-2 pb-4">
+
+            {/* Logo Image */}
+            <Link href="/" className="transition-opacity hover:opacity-80 duration-300 mb-2">
+              <Image
+                src="/logo.png"
+                alt="Moon Rabbit Tours"
+                width={150}
+                height={150}
+                className="w-[120px] sm:w-[150px] h-auto object-contain drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]"
+              />
+            </Link>
+
+            {/* Moon Rabbit Text */}
+            <h2 className="text-white text-[24px] sm:text-[28px] tracking-wide font-serif mb-1" style={{ textShadow: "0px 2px 4px rgba(0,0,0,0.8)" }}>
+              Moon Rabbit
+            </h2>
+
+            {/* Divider with Star/Diamond */}
+            <div className="flex items-center justify-center gap-2 my-1 opacity-80 w-full max-w-[180px]">
+              <div className="h-[1px] bg-white/70 flex-grow" />
+              <span className="text-white text-[9px] leading-none mb-[2px]">✦</span>
+              <div className="h-[1px] bg-white/70 flex-grow" />
+            </div>
+
+            {/* TOURS text */}
+            <p className="font-['Oswald',sans-serif] text-white/95 text-[10px] sm:text-[11px] tracking-[6px] sm:tracking-[8px] uppercase font-[400] mt-1 mb-5 ml-[4px]">
+              TOURS
+            </p>
+
+            {/* Cursive Tagline */}
+            <p
+              className="text-white text-[16px] sm:text-[18px] leading-snug drop-shadow-md"
+              style={{ fontFamily: "var(--font-dancing), 'Georgia', cursive", fontWeight: 400 }}
+            >
+              ..a <span className="text-[#e2c565]">spiritual</span> journey through the material <span className="text-[20px] sm:text-[22px]">World</span>
+            </p>
+          </div>
+
+          {/* Right Side Mushroom Image */}
+          <div className="hidden sm:block pb-6 pr-4 sm:pr-8">
+            <Image
+              src="/amanita.png"
+              alt="Mushroom"
+              width={140}
+              height={150}
+              className="w-[100px] sm:w-[140px] lg:w-[160px] h-auto object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)] hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
