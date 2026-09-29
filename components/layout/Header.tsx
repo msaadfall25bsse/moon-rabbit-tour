@@ -55,8 +55,8 @@ export default function Header() {
           </li>
           <li>
             <Link
-              href="#"
-              className="text-white hover:text-[#ff4a52] transition-colors duration-200 py-2 inline-block"
+              href="/tour"
+              className="text-white hover:text-[#ff4a52] transition-colors duration-200 py-2 inline-block border-b-2 border-transparent hover:border-[#ff4a52]"
             >
               Tours
             </Link>
@@ -111,7 +111,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="#"
+                href="/tour"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block text-white hover:text-[#ff4a52] transition-colors py-1"
               >
