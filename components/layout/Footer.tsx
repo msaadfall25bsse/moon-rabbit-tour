@@ -30,22 +30,7 @@ export default function Footer() {
             />
           </Link>
 
-          {/* Moon Rabbit Text */}
-          <h2 className="text-white text-[24px] sm:text-[28px] tracking-wide font-serif mb-1" style={{ textShadow: "0px 2px 4px rgba(0,0,0,0.8)" }}>
-            Moon Rabbit
-          </h2>
-
-          {/* Divider with Star/Diamond */}
-          <div className="flex items-center justify-center gap-2 my-1 opacity-80 w-full max-w-[180px]">
-            <div className="h-[1px] bg-white/70 flex-grow" />
-            <span className="text-white text-[9px] leading-none mb-[2px]">✦</span>
-            <div className="h-[1px] bg-white/70 flex-grow" />
-          </div>
-
-          {/* TOURS text */}
-          <p className="font-['Oswald',sans-serif] text-white/95 text-[10px] sm:text-[11px] tracking-[6px] sm:tracking-[8px] uppercase font-[400] mt-1 mb-5 ml-[4px]">
-            TOURS
-          </p>
+        
 
           {/* Cursive Tagline */}
           <p
