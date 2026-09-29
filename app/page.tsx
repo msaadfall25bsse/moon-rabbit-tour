@@ -8,7 +8,6 @@ import Footer from "@/components/layout/Footer";
 import { MOUNTAINS_DATA } from "./mountains-data";
 
 export default function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
   const autoSlideRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
