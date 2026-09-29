@@ -55,7 +55,7 @@ export default function Header() {
           </li>
           <li>
             <Link
-              href="https://moonrabbit.pk/tour/"
+              href="#"
               className="text-white hover:text-[#ff4a52] transition-colors duration-200 py-2 inline-block"
             >
               Tours
@@ -63,7 +63,7 @@ export default function Header() {
           </li>
           <li>
             <Link
-              href="https://moonrabbit.pk/vehicles/"
+              href="#"
               className="text-white hover:text-[#ff4a52] transition-colors duration-200 py-2 inline-block"
             >
               Vehicles
@@ -71,7 +71,7 @@ export default function Header() {
           </li>
           <li>
             <Link
-              href="https://moonrabbit.pk/accommodation/"
+              href="#"
               className="text-white hover:text-[#ff4a52] transition-colors duration-200 py-2 inline-block"
             >
               Accommodations
@@ -79,7 +79,7 @@ export default function Header() {
           </li>
           <li>
             <Link
-              href="https://moonrabbit.pk/contact/"
+              href="#"
               className="text-white hover:text-[#ff4a52] transition-colors duration-200 py-2 inline-block"
             >
               Contact
@@ -87,7 +87,7 @@ export default function Header() {
           </li>
           <li>
             <Link
-              href="https://moonrabbit.pk/mining/"
+              href="#"
               className="text-[#FFD700] hover:text-[#ddb36a] transition-colors duration-200 py-2 inline-block font-semibold"
             >
               Mining
@@ -111,7 +111,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="https://moonrabbit.pk/tour/"
+                href="#"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block text-white hover:text-[#ff4a52] transition-colors py-1"
               >
@@ -120,7 +120,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="https://moonrabbit.pk/vehicles/"
+                href="#"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block text-white hover:text-[#ff4a52] transition-colors py-1"
               >
@@ -129,7 +129,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="https://moonrabbit.pk/accommodation/"
+                href="#"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block text-white hover:text-[#ff4a52] transition-colors py-1"
               >
@@ -138,7 +138,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="https://moonrabbit.pk/contact/"
+                href="#"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block text-white hover:text-[#ff4a52] transition-colors py-1"
               >
@@ -147,7 +147,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="https://moonrabbit.pk/mining/"
+                href="#"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block text-[#FFD700] hover:text-[#ddb36a] transition-colors py-1 font-semibold"
               >
