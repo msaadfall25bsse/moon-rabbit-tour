@@ -29,7 +29,7 @@ export default function GHKPage() {
           
           {/* Left Column: Map Image */}
           <div className="flex w-full md:w-[40%] flex-col items-center">
-            <h2 className="mb-4 font-['Oswald',sans-serif] text-[24px] font-[400] text-white tracking-widest text-center">
+            <h2 className="mb-4 font-['Oswald',sans-serif] text-[30px] font-normal text-white tracking-widest text-center">
               GHK
             </h2>
             <div className="relative w-full max-w-[400px]">
@@ -46,19 +46,19 @@ export default function GHKPage() {
           
           {/* Right Column: Text Information */}
           <div className="flex w-full md:w-[60%] flex-col text-white font-['Oswald',sans-serif] pt-2 md:pt-10">
-            <h2 className="mb-8 font-['Oswald',sans-serif] text-[24px] sm:text-[28px] font-bold text-white tracking-wide">
+            <h2 className="mb-8 font-['Oswald',sans-serif] text-[25px] font-normal text-white tracking-wide">
               Gilgit-Hunza-Khunjerab
             </h2>
             
-            <p className="mb-6 text-[14px] leading-[1.8] font-[300] tracking-wider text-justify">
+            <p className="mb-6 text-[16px] leading-[1.8] font-normal tracking-wide text-justify">
               <strong className="font-bold">Gilgit:</strong> Gilgit is a city located in the Gilgit-Baltistan region of Pakistan. It serves as the capital of the Gilgit-Baltistan administrative territory. Gilgit is situated in a picturesque valley surrounded by the towering peaks of the Himalayas and the Karakoram Range. The city is known for its stunning natural beauty, rich cultural heritage, and strategic importance due to its location on the ancient Silk Road.
             </p>
 
-            <p className="mb-6 text-[14px] leading-[1.8] font-[300] tracking-wider text-justify">
+            <p className="mb-6 text-[16px] leading-[1.8] font-normal tracking-wide text-justify">
               <strong className="font-bold">Hunza Valley:</strong> Hunza Valley is a mountainous region located in the Gilgit-Baltistan territory of Pakistan. It&#39;s famous for its breathtaking landscapes, crystal-clear rivers, and the hospitable culture of its people. The valley is home to several charming villages, each offering panoramic views of the surrounding mountains, including Rakaposhi and Ultar Sar. Hunza is also known for its traditional wooden architecture, terraced fields, and the iconic Baltit Fort.
             </p>
 
-            <p className="mb-6 text-[14px] leading-[1.8] font-[300] tracking-wider text-justify">
+            <p className="mb-6 text-[16px] leading-[1.8] font-normal tracking-wide text-justify">
               <strong className="font-bold">Khunjerab Pass:</strong> The Khunjerab Pass is a high mountain pass situated at an elevation of about 4,693 meters (15,397 feet) above sea level. It&#39;s one of the highest paved international border crossings in the world and serves as the gateway between Pakistan and China. The pass is located on the Karakoram Highway, which connects Gilgit in Pakistan to Kashgar in China&#39;s Xinjiang region. The pass offers breathtaking views of the surrounding mountains and is also a point of interest for wildlife enthusiasts, as it&#39;s part of the Khunjerab National Park, home to various species like the snow leopard and Marco Polo sheep.
             </p>
           </div>
