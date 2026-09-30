@@ -32,13 +32,13 @@ export default function GHKPage() {
             <h2 className="mb-4 font-['Oswald',sans-serif] text-[30px] font-normal text-white tracking-normal text-center">
               GHK
             </h2>
-            <div className="relative w-[calc(100%+20px)] -ml-[10px]">
+            <div className="relative w-[calc(100%+40px)] -ml-[10px]">
               <Image
                 src="/tour/ghk_map.png"
                 alt="GHK Route Map"
                 width={600}
                 height={600}
-                className="h-auto w-full object-contain transform scale-[1.05]"
+                className="h-auto w-full object-contain"
                 unoptimized
               />
             </div>
