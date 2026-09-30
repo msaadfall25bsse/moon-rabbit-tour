@@ -12,7 +12,7 @@ export default function TourPage() {
     <div className="relative min-h-screen w-full overflow-x-hidden bg-black text-white">
       {/* ===== HERO SECTION ===== */}
       <section
-        className="relative flex min-h-[455px] w-full flex-col bg-cover bg-center bg-no-repeat"
+        className="relative flex min-h-[415px] w-full flex-col bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/tour/hero-background.jpg')",
         }}
