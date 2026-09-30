@@ -24,7 +24,7 @@ export default function GHKPage() {
       </section>
 
       {/* ===== GHK DETAILS SECTION ===== */}
-      <section className="w-full bg-black py-16 px-6 md:px-12 lg:px-24">
+      <section className="w-full bg-black py-[54px] px-[14px] md:px-[38px] lg:px-[86px]">
         <div className="mx-auto flex max-w-[1140px] flex-col md:flex-row items-start justify-center gap-12 lg:gap-20">
           
           {/* Left Column: Map Image */}
