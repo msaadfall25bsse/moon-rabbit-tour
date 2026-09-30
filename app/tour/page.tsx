@@ -161,7 +161,7 @@ export default function TourPage() {
 function TourRow({ tours }: { tours: Tour[] }) {
   return (
     <section className="w-full bg-black p-2.5">
-      <div className="mx-auto flex w-full flex-wrap justify-center bg-[#0f0f0f] px-5 md:w-[96.645%] md:flex-nowrap">
+      <div className="mx-auto flex w-full flex-wrap justify-center px-5 md:w-[96.645%] md:flex-nowrap">
         {tours.map((tour) => (
           <TourCard key={tour.slug} tour={tour} />
         ))}
@@ -192,7 +192,7 @@ function TourCard({ tour }: { tour: Tour }) {
           />
           {/* Text Overlay for Abbreviation */}
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center transition-transform duration-[300ms] group-hover:scale-110">
-            <span className="text-[32px] md:text-[40px] font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] tracking-wider">
+            <span className="text-[40px] md:text-[55px] font-[family-name:var(--font-oswald)] font-normal text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] tracking-wide">
               {tour.slug.toUpperCase()}
             </span>
           </div>
