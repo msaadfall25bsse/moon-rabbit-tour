@@ -89,9 +89,105 @@ export default function TourPage() {
         </div>
       </section>
 
-      {/* ===== SPACER ===== */}
-      <section className="w-full bg-black p-2.5">
-        <div className="mx-auto h-[50px] w-full max-w-[1140px]" />
+      {/* ===== TOURS SECTION ===== */}
+      <section className="w-full bg-black px-6 py-10 md:px-12 lg:px-[45px]">
+        {/* Tours Heading / Wood Sign */}
+        <div className="mb-10">
+          <Image
+            src="/tour/tours-sign.png"
+            alt="Tours"
+            width={172}
+            height={70}
+            className="w-[140px] md:w-[172px] h-auto object-contain"
+          />
+        </div>
+
+        {/* Tour Cards Grid */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          {/* Card 1: GHK */}
+          <div className="flex flex-col items-center">
+            <div className="group relative w-full overflow-hidden rounded-[4px] shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+              <Image
+                src="/tour/ghk.png"
+                alt="Gilgit-Hunza-Khunjerab"
+                width={400}
+                height={400}
+                className="h-[350px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/10 transition-colors duration-300">
+                <h3 className="text-[45px] lg:text-[50px] font-bold tracking-wider text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-sans" style={{fontFamily: "'Oswald', sans-serif"}}>
+                  GHK
+                </h3>
+              </div>
+            </div>
+            <p className="mt-4 text-center text-[15px] font-bold text-white drop-shadow-md" style={{fontFamily: "'Oswald', sans-serif"}}>
+              Gilgit-Hunza-Khunjerab
+            </p>
+          </div>
+
+          {/* Card 2: SKS */}
+          <div className="flex flex-col items-center">
+            <div className="group relative w-full overflow-hidden rounded-[4px] shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+              <Image
+                src="/tour/sks.png"
+                alt="Skardu-Khaplu-Shigar"
+                width={400}
+                height={400}
+                className="h-[350px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/10 transition-colors duration-300">
+                <h3 className="text-[45px] lg:text-[50px] font-bold tracking-wider text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-sans" style={{fontFamily: "'Oswald', sans-serif"}}>
+                  SKS
+                </h3>
+              </div>
+            </div>
+            <p className="mt-4 text-center text-[15px] font-bold text-white drop-shadow-md" style={{fontFamily: "'Oswald', sans-serif"}}>
+              Skardu-Khaplu-Shigar
+            </p>
+          </div>
+
+          {/* Card 3: GYP */}
+          <div className="flex flex-col items-center">
+            <div className="group relative w-full overflow-hidden rounded-[4px] shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+              <Image
+                src="/tour/gyp.png"
+                alt="Gilgit-Yasin-Phandar"
+                width={400}
+                height={400}
+                className="h-[350px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/10 transition-colors duration-300">
+                <h3 className="text-[45px] lg:text-[50px] font-bold tracking-wider text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-sans" style={{fontFamily: "'Oswald', sans-serif"}}>
+                  GYP
+                </h3>
+              </div>
+            </div>
+            <p className="mt-4 text-center text-[15px] font-bold text-white drop-shadow-md" style={{fontFamily: "'Oswald', sans-serif"}}>
+              Gilgit-Yasin-Phandar
+            </p>
+          </div>
+
+          {/* Card 4: SKC */}
+          <div className="flex flex-col items-center">
+            <div className="group relative w-full overflow-hidden rounded-[4px] shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+              <Image
+                src="/tour/skc.png"
+                alt="Swat-Kalash-Chitral"
+                width={400}
+                height={400}
+                className="h-[350px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/10 transition-colors duration-300">
+                <h3 className="text-[45px] lg:text-[50px] font-bold tracking-wider text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-sans" style={{fontFamily: "'Oswald', sans-serif"}}>
+                  SKC
+                </h3>
+              </div>
+            </div>
+            <p className="mt-4 text-center text-[15px] font-bold text-white drop-shadow-md" style={{fontFamily: "'Oswald', sans-serif"}}>
+              Swat-Kalash-Chitral
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* ===== FOOTER ===== */}
