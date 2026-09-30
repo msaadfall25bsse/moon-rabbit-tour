@@ -190,6 +190,11 @@ export default function TourPage() {
         </div>
       </section>
 
+      {/* ===== SPACER ===== */}
+      <section className="w-full bg-black p-2.5">
+        <div className="mx-auto h-[50px] w-full max-w-[1140px]" />
+      </section>
+
       {/* ===== FOOTER ===== */}
       <Footer />
     </div>
