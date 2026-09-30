@@ -94,7 +94,7 @@ export default function TourPage() {
         {/* Tours Heading / Wood Sign */}
         <div className="mb-10">
           <Image
-            src="/tour/tours-sign.png"
+            src="/tour/wood-sign.png"
             alt="Tours"
             width={172}
             height={70}
