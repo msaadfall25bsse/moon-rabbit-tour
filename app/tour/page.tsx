@@ -41,7 +41,7 @@ export default function TourPage() {
         {/* Row 1 Tour Cards Grid */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6 mb-16">
           {/* Card 1: GHK */}
-          <div className="flex flex-col items-center">
+          <Link href="/ghk" className="flex flex-col items-center cursor-pointer">
             <div className="group relative w-full overflow-hidden rounded-[4px] shadow-[0_0_10px_rgba(0,0,0,0.5)]">
               <Image
                 src="/tour/ghk_new.png"
@@ -54,7 +54,7 @@ export default function TourPage() {
             <p className="mt-3 text-center text-[16px] font-bold text-white tracking-wider" style={{fontFamily: "'Oswald', sans-serif"}}>
               Gilgit-Hunza-Khunjerab
             </p>
-          </div>
+          </Link>
 
           {/* Card 2: SKS */}
           <div className="flex flex-col items-center">
