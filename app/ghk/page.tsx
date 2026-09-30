@@ -17,7 +17,7 @@ export default function GHKPage() {
       <section
         className="relative flex min-h-[280px] w-full flex-col bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/tour/hero-background.jpg')",
+          backgroundImage: "url('/ghk/hero-background.jpg')",
         }}
       >
         <div className="absolute inset-0 bg-black/50 pointer-events-none" />
