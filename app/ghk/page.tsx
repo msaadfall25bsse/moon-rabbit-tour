@@ -13,11 +13,11 @@ export default function GHKPage() {
       {/* ================= HEADER / NAVIGATION OVERLAY ================= */}
       <Header />
 
-      {/* ===== HERO SECTION (Same as Tour Page) ===== */}
+      {/* ===== HERO SECTION ===== */}
       <section
         className="relative flex min-h-[280px] w-full flex-col bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/tour/hero-background.jpg')",
+          backgroundImage: "url('https://moonrabbit.pk/wp-content/uploads/2023/07/1643468.jpg')",
         }}
       >
         <div className="absolute inset-0 bg-black/50 pointer-events-none" />
