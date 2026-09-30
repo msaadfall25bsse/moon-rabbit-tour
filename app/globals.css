@@ -22,3 +22,16 @@ body {
   color: #ddb36a !important;
 }
 
+@keyframes tourFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.tour-fade-in {
+  animation: tourFadeIn 1s ease-in-out forwards;
+}
+
