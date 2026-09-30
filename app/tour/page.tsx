@@ -16,13 +16,13 @@ export default function TourPage() {
 
       {/* ===== HERO SECTION ===== */}
       <section
-        className="relative flex min-h-[285px] w-full flex-col bg-cover bg-center bg-no-repeat"
+        className="relative flex min-h-[280px] w-full flex-col bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/tour/hero-background.jpg')",
         }}
       >
-        {/* Dark overlay not needed as per screenshot, the background is bright enough */}
-        
+        {/* Dark overlay to match live site */}
+        <div className="absolute inset-0 bg-black/50 pointer-events-none" />
       </section>
 
       {/* ===== TOURS SECTION ===== */}
