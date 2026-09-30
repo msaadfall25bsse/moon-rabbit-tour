@@ -17,7 +17,7 @@ export default function GHKPage() {
       <section
         className="relative flex min-h-[280px] w-full flex-col bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('https://moonrabbit.pk/wp-content/uploads/2023/07/1643468.jpg')",
+          backgroundImage: "url('/tour/hero-background.jpg')",
         }}
       >
         <div className="absolute inset-0 bg-black/50 pointer-events-none" />
