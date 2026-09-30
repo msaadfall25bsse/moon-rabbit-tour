@@ -28,7 +28,7 @@ export default function GHKPage() {
         <div className="mx-auto flex max-w-[1140px] flex-col md:flex-row items-start justify-center gap-12 lg:gap-20">
           
           {/* Left Column: Map Image */}
-          <div className="flex w-full md:w-[40%] flex-col items-center">
+          <div className="flex w-full md:w-[35%] flex-col items-center">
             <h2 className="mb-4 font-['Oswald',sans-serif] text-[30px] font-normal text-white tracking-widest text-center">
               GHK
             </h2>
@@ -45,7 +45,7 @@ export default function GHKPage() {
           </div>
           
           {/* Right Column: Text Information */}
-          <div className="flex w-full md:w-[60%] flex-col text-white font-['Oswald',sans-serif] pt-2 md:pt-10">
+          <div className="flex w-full md:w-[65%] flex-col text-white font-['Oswald',sans-serif]">
             <h2 className="mb-8 font-['Oswald',sans-serif] text-[25px] font-normal text-white tracking-wide">
               Gilgit-Hunza-Khunjerab
             </h2>
