@@ -48,10 +48,10 @@ export default function TourPage() {
                 alt="Gilgit-Hunza-Khunjerab"
                 width={400}
                 height={400}
-                className="h-[160px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="h-[353px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
-            <p className="mt-3 text-center text-[11px] font-bold text-white tracking-wider" style={{fontFamily: "'Oswald', sans-serif"}}>
+            <p className="mt-3 text-center text-[16px] font-bold text-white tracking-wider" style={{fontFamily: "'Oswald', sans-serif"}}>
               Gilgit-Hunza-Khunjerab
             </p>
           </div>
@@ -64,10 +64,10 @@ export default function TourPage() {
                 alt="Skardu-Khaplu-Shigar"
                 width={400}
                 height={400}
-                className="h-[160px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="h-[353px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
-            <p className="mt-3 text-center text-[11px] font-bold text-white tracking-wider" style={{fontFamily: "'Oswald', sans-serif"}}>
+            <p className="mt-3 text-center text-[16px] font-bold text-white tracking-wider" style={{fontFamily: "'Oswald', sans-serif"}}>
               Skardu-Khaplu-Shigar
             </p>
           </div>
@@ -80,10 +80,10 @@ export default function TourPage() {
                 alt="Gilgit-Yasin-Phandar"
                 width={400}
                 height={400}
-                className="h-[160px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="h-[353px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
-            <p className="mt-3 text-center text-[11px] font-bold text-white tracking-wider" style={{fontFamily: "'Oswald', sans-serif"}}>
+            <p className="mt-3 text-center text-[16px] font-bold text-white tracking-wider" style={{fontFamily: "'Oswald', sans-serif"}}>
               Gilgit-Yasin-Phandar
             </p>
           </div>
@@ -96,10 +96,10 @@ export default function TourPage() {
                 alt="Swat-Kalash-Chitral"
                 width={400}
                 height={400}
-                className="h-[160px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="h-[353px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
-            <p className="mt-3 text-center text-[11px] font-bold text-white tracking-wider" style={{fontFamily: "'Oswald', sans-serif"}}>
+            <p className="mt-3 text-center text-[16px] font-bold text-white tracking-wider" style={{fontFamily: "'Oswald', sans-serif"}}>
               Swat-Kalash-Chitral
             </p>
           </div>
@@ -126,10 +126,10 @@ export default function TourPage() {
                 alt="Fairy Meadows"
                 width={400}
                 height={400}
-                className="h-[160px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="h-[353px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
-            <p className="mt-3 text-center text-[11px] font-bold text-white tracking-wider" style={{fontFamily: "'Oswald', sans-serif"}}>
+            <p className="mt-3 text-center text-[16px] font-bold text-white tracking-wider" style={{fontFamily: "'Oswald', sans-serif"}}>
               Fairy Meadows
             </p>
           </div>
@@ -142,10 +142,10 @@ export default function TourPage() {
                 alt="Yasin - Astore - Hunza"
                 width={400}
                 height={400}
-                className="h-[350px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="h-[353px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
-            <p className="mt-3 text-center text-[11px] font-bold text-white tracking-wider" style={{fontFamily: "'Oswald', sans-serif"}}>
+            <p className="mt-3 text-center text-[16px] font-bold text-white tracking-wider" style={{fontFamily: "'Oswald', sans-serif"}}>
               Yasin - Astore - Hunza
             </p>
           </div>
@@ -158,10 +158,10 @@ export default function TourPage() {
                 alt="Babusar - Naran - Shogran"
                 width={400}
                 height={400}
-                className="h-[350px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="h-[353px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
-            <p className="mt-3 text-center text-[11px] font-bold text-white tracking-wider" style={{fontFamily: "'Oswald', sans-serif"}}>
+            <p className="mt-3 text-center text-[16px] font-bold text-white tracking-wider" style={{fontFamily: "'Oswald', sans-serif"}}>
               Babusar - Naran - Shogran
             </p>
           </div>
@@ -174,10 +174,10 @@ export default function TourPage() {
                 alt="Deosai & Astore"
                 width={400}
                 height={400}
-                className="h-[350px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="h-[353px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
-            <p className="mt-3 text-center text-[11px] font-bold text-white tracking-wider" style={{fontFamily: "'Oswald', sans-serif"}}>
+            <p className="mt-3 text-center text-[16px] font-bold text-white tracking-wider" style={{fontFamily: "'Oswald', sans-serif"}}>
               Deosai & Astore
             </p>
           </div>
